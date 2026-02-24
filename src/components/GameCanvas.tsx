@@ -7,8 +7,12 @@ import {
   PowerUp, 
   PowerUpType, 
   Particle, 
+<<<<<<< HEAD
   GameStats,
   ShootingMode
+=======
+  GameStats 
+>>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
 } from '../types';
 import { 
   CANVAS_WIDTH, 
@@ -29,7 +33,10 @@ import { audioManager } from '../services/audioManager';
 
 interface GameCanvasProps {
   gameState: GameState;
+<<<<<<< HEAD
   shootingMode: ShootingMode;
+=======
+>>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
   onGameOver: (stats: GameStats) => void;
   onAchievementUnlock: (id: string) => void;
   onLevelUp: (level: number) => void;
@@ -38,7 +45,10 @@ interface GameCanvasProps {
 
 const GameCanvas: React.FC<GameCanvasProps> = ({ 
   gameState, 
+<<<<<<< HEAD
   shootingMode,
+=======
+>>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
   onGameOver, 
   onAchievementUnlock, 
   onLevelUp,
@@ -61,7 +71,10 @@ const GameCanvas: React.FC<GameCanvasProps> = ({
   });
 
   const keysRef = useRef<{ [key: string]: boolean }>({});
+<<<<<<< HEAD
   const isTouchingRef = useRef(false);
+=======
+>>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
   const enemiesRef = useRef<Enemy[]>([]);
   const bulletsRef = useRef<Bullet[]>([]);
   const powerUpsRef = useRef<PowerUp[]>([]);
@@ -380,6 +393,7 @@ const GameCanvas: React.FC<GameCanvasProps> = ({
     p.x = Math.max(0, Math.min(CANVAS_WIDTH - p.width, p.x));
     p.y = Math.max(0, Math.min(CANVAS_HEIGHT - p.height, p.y));
 
+<<<<<<< HEAD
     // 射击逻辑
     if (shootingMode === ShootingMode.AUTO) {
       shoot(time);
@@ -389,6 +403,9 @@ const GameCanvas: React.FC<GameCanvasProps> = ({
         shoot(time);
       }
     }
+=======
+    if (keysRef.current['Space']) shoot(time);
+>>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
 
     if (p.invincible > 0) p.invincible--;
     if (p.tripleShot > 0) p.tripleShot--;
@@ -606,8 +623,11 @@ const GameCanvas: React.FC<GameCanvasProps> = ({
       ref={canvasRef}
       width={CANVAS_WIDTH}
       height={CANVAS_HEIGHT}
+<<<<<<< HEAD
       onTouchStart={() => { isTouchingRef.current = true; }}
       onTouchEnd={() => { isTouchingRef.current = false; }}
+=======
+>>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
       onTouchMove={handleTouch}
       className="w-full h-full object-contain bg-black rounded-lg shadow-2xl"
     />
