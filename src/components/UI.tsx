@@ -1,11 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, Shield, Zap, Target, Crosshair, Trophy, Info, Keyboard, MousePointer2 } from 'lucide-react';
-<<<<<<< HEAD
-import { GameState, GameStats, Achievement, ShootingMode } from '../types';
-=======
 import { GameState, GameStats, Achievement } from '../types';
->>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
 import { ACHIEVEMENTS_LIST } from '../constants';
 
 interface UIOverlayProps {
@@ -19,15 +15,7 @@ interface UIOverlayProps {
   levelUpMessage?: string;
 }
 
-<<<<<<< HEAD
-export const StartScreen: React.FC<{ 
-  onStart: () => void;
-  shootingMode: ShootingMode;
-  onShootingModeChange: (mode: ShootingMode) => void;
-}> = ({ onStart, shootingMode, onShootingModeChange }) => (
-=======
 export const StartScreen: React.FC<{ onStart: () => void }> = ({ onStart }) => (
->>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
   <motion.div 
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -41,45 +29,6 @@ export const StartScreen: React.FC<{ onStart: () => void }> = ({ onStart }) => (
     >
       LUOSIFEN星际先锋
     </motion.h1>
-<<<<<<< HEAD
-    <p className="text-blue-200/60 text-lg mb-8 max-w-md">
-      穿越浩瀚星空，击败敌军舰队，成为最强星际飞行员。
-    </p>
-
-    <div className="flex flex-col items-center gap-6 mb-12">
-      <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
-        <button
-          onClick={() => onShootingModeChange(ShootingMode.MANUAL)}
-          className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-            shootingMode === ShootingMode.MANUAL 
-              ? 'bg-blue-600 text-white shadow-lg' 
-              : 'text-white/40 hover:text-white/60'
-          }`}
-        >
-          手动射击 (空格/触摸)
-        </button>
-        <button
-          onClick={() => onShootingModeChange(ShootingMode.AUTO)}
-          className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
-            shootingMode === ShootingMode.AUTO 
-              ? 'bg-blue-600 text-white shadow-lg' 
-              : 'text-white/40 hover:text-white/60'
-          }`}
-        >
-          自动射击
-        </button>
-      </div>
-
-      <button 
-        onClick={onStart}
-        className="group relative px-12 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(37,99,235,0.5)]"
-      >
-        <span className="flex items-center gap-2 text-xl">
-          <Play className="fill-current" /> 开始航行
-        </span>
-      </button>
-    </div>
-=======
     <p className="text-blue-200/60 text-lg mb-12 max-w-md">
       穿越浩瀚星空，击败敌军舰队，成为最强星际飞行员。
     </p>
@@ -92,7 +41,6 @@ export const StartScreen: React.FC<{ onStart: () => void }> = ({ onStart }) => (
         <Play className="fill-current" /> 开始航行
       </span>
     </button>
->>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
 
     <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl w-full">
       <div className="bg-white/5 p-4 rounded-2xl border border-white/10 backdrop-blur-md">

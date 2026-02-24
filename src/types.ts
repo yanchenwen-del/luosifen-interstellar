@@ -5,14 +5,6 @@ export enum GameState {
   GAME_OVER = 'GAME_OVER',
 }
 
-<<<<<<< HEAD
-export enum ShootingMode {
-  MANUAL = 'MANUAL',
-  AUTO = 'AUTO',
-}
-
-=======
->>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
 export interface Point {
   x: number;
   y: number;

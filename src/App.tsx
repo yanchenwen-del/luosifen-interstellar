@@ -1,10 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-<<<<<<< HEAD
-import { GameState, GameStats, Achievement, ShootingMode } from './types';
-=======
 import { GameState, GameStats, Achievement } from './types';
->>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
 import { ACHIEVEMENTS_LIST, PLAYER_MAX_HEALTH } from './constants';
 import GameCanvas from './components/GameCanvas';
 import { StartScreen, HUD, PauseScreen, GameOverScreen, AchievementPopup } from './components/UI';
@@ -26,10 +22,6 @@ export default function App() {
   );
   const [lastAchievement, setLastAchievement] = useState<Achievement | null>(null);
   const [levelUpMessage, setLevelUpMessage] = useState<string | null>(null);
-<<<<<<< HEAD
-  const [shootingMode, setShootingMode] = useState<ShootingMode>(ShootingMode.MANUAL);
-=======
->>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
 
   const handleStart = () => {
     setStats({
@@ -161,10 +153,6 @@ export default function App() {
         <div className="relative w-full max-w-[600px] aspect-[2/3] md:aspect-[8/9] bg-black rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(37,99,235,0.1)] border border-white/5">
           <GameCanvas 
             gameState={gameState}
-<<<<<<< HEAD
-            shootingMode={shootingMode}
-=======
->>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
             onGameOver={handleGameOver}
             onAchievementUnlock={handleAchievementUnlock}
             onLevelUp={handleLevelUp}
@@ -173,16 +161,7 @@ export default function App() {
 
           <AnimatePresence mode="wait">
             {gameState === GameState.START && (
-<<<<<<< HEAD
-              <StartScreen 
-                key="start-screen" 
-                onStart={handleStart} 
-                shootingMode={shootingMode}
-                onShootingModeChange={setShootingMode}
-              />
-=======
               <StartScreen key="start-screen" onStart={handleStart} />
->>>>>>> 752d9a842c6edfb0d0406a35ef44a7c78cdf94b6
             )}
             
             {gameState === GameState.PLAYING && (
